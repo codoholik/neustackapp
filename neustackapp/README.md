@@ -215,8 +215,7 @@ POST /api/checkout/
     "customer_id": "cust1",
     "total": 1000,
     "discount": 100,
-    "final_amount": 900,
-    "generated_coupon": null
+    "final_amount": 900
 }
 ```
 
@@ -228,6 +227,12 @@ POST /api/checkout/
 
 ```http
 POST /api/admin/discount/
+```
+
+```json
+{
+    "discount_percentage": 25
+}
 ```
 
 ### Response
@@ -295,12 +300,6 @@ This ensures:
 ---
 
 # Running Tests
-
-```bash
-pytest
-```
-
-Or:
 
 ```bash
 pytest tests/
