@@ -321,25 +321,3 @@ If this application were extended for production usage:
 * Rate limiting
 * Monitoring and observability
 * Idempotent checkout requests
-
----
-
-# Design Decisions
-
-Design decisions and trade-offs are documented in:
-
-```text
-DECISIONS.md
-```
-
----
-
-# Author
-
-Assignment implementation using:
-
-* Django REST Framework
-* Service Layer Architecture
-* Repository Pattern
-* In-Memory Storage
-* Thread-Safe Checkout Processing

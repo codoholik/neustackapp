@@ -18,6 +18,8 @@ from ecommerce.services.cart_service import (
     CartService
 )
 
+import ecommerce.repository.store as memory_store
+
 
 class CheckoutService():
 
@@ -51,8 +53,8 @@ class CheckoutService():
 
         with ORDER_LOCK:
 
-            ORDER_COUNT += 1
-            order_number = ORDER_COUNT
+            memory_store.ORDER_COUNT += 1
+            order_number = memory_store.ORDER_COUNT
 
             generated_coupon = None
 
@@ -72,7 +74,7 @@ class CheckoutService():
 
         ORDERS.append(order)
 
-        TOTAL_DISCOUNT_GIVEN += discount
+        memory_store.TOTAL_DISCOUNT_GIVEN += discount
 
         CartService.clear_cart(customer_id)
 
